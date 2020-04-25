@@ -408,3 +408,9 @@ Section "Screen"
     EndSubSection
 EndSection
 ```
+
+### Ubuntu change resolution (vnc)
+
+```
+xrandr --fb 1366x768
+```
