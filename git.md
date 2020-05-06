@@ -10,3 +10,7 @@ git config user.email "your email address used on git repo"
 git rm --cached <file>
 git rm -r --cached <folder>
 ```
+
+## Render htmls on github
+
+check repo `settings` -> `GitHub Pages`
