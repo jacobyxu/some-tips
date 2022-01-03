@@ -414,3 +414,20 @@ EndSection
 ```
 xrandr --fb 1366x768
 ```
+
+### Ubuntu schedule a task
+
+* crontab/rc.local task run as `sudo su` role, be careful about this
+* [link](https://help.ubuntu.com/community/CronHowto) to check more usage samples
+
+1. Check Current Directory
+
+python -c "import os;print(os.getcwd())"
+
+2. Crontab operations
+
+- to add: `crontab -e`
+- to list: `crontab -l`
+- to remove: `crontab -r`
+- to check the log: `tail /var/log/syslog`
+- to check the status: `sudo service cron status`
