@@ -1,3 +1,46 @@
+# Update on 2023-03-12
+
+## Setup Ubuntu 18.04 with CUDA, GPU
+reference:
+- [ref 1](https://askubuntu.com/questions/1195035/nvidia-smi-couldnt-find-libnvidia-ml-so-library-and-nothing-in-usr-lib-nvidia)
+- [ref 2](https://askubuntu.com/questions/1028830/how-do-i-install-cuda-on-ubuntu-18-04)
+#### removing ALL nvidia software
+```bash
+sudo apt-get purge nvidia*
+dpkg -l | grep nvidia
+```
+#### specify cmd to remove the left (mostly libnvidia-* but also xserver-xorg-video-nvidia-xxx`)
+```bash
+sudo apt-get purge libnvidia* xserver-xorg-video-nvidia-470
+```
+#### clean up
+```bash
+sudo apt autoremove
+```
+
+#### reinstall
+```bash
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt update
+sudo ubuntu-drivers autoinstall
+```
+
+Add below into `.bashrc`
+```bash
+export PATH=/usr/lib/i386-linux-gnu${PATH:+:${PATH}}
+```
+
+#### reboot
+```bash
+sudo reboot 
+```
+
+#### install cuda
+```bash
+sudo apt install nvidia-cuda-toolkit
+```
+
+
 ## Set up VNC on Ubuntu
 
 * use 16.04, 18.04 can not offer vnc starting on boot!
